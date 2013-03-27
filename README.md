@@ -1,9 +1,9 @@
 # Barcode39 v0.0.1
-### By: Erik Zettersten http://zettersten.com
+By: Erik Zettersten http://zettersten.com
 
 ## How to use
 
-```
+```html
 <script>
 	new Barcode39;
 </script>
@@ -16,7 +16,7 @@ Thats it!
 #### BarCode39#toString
 - Prints out the string that drew the barcode
 
-```
+```html
 <script>
 	var b = new Barcode39;
 	b.toString() // the content of your element
@@ -26,7 +26,7 @@ Thats it!
 #### BarCode39#toDataURL
 - Prints out the Data URL
 
-```
+```html
 <script>
 	var b = new Barcode39;
 	b.toDataURL() // data:image/png;base64,*
@@ -36,7 +36,7 @@ Thats it!
 #### BarCode39#toBarcode
 - Prints out the Data URL
 
-```
+```html
 <script>
 	var b = new Barcode39;
 	b.toBarcode() // [BwbwbWBwb]w[BwbwbWBwb]w[etc...]
@@ -45,7 +45,7 @@ Thats it!
 
 ## Barcode39 Parameters
 
-```
+```html
 <script>
 	var b = new Barcode39(elementId, type, delimeter);
 </script>
@@ -67,13 +67,13 @@ Barcode39 needs an element to create an image element within.
 
 By default, the element Barcode39 looks for is an element with an ID of "barcode"
 
-```
+```html
 <div id="barcode"></div>
 ```
 
 We also need to provide a value to code, otherwise Barcode39 will throw an error.
 
-```
+```html
 <div id="barcode">123123123123123123123123</div>
 ```
 
