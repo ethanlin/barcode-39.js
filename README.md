@@ -1,50 +1,56 @@
 # Barcode39 v0.0.1
-# How to use
+### By: Erik Zettersten http://zettersten.com
+
+## How to use
 
 ```
-	<script>
-		new Barcode39;
-	</script>
+<script>
+	new Barcode39;
+</script>
 ```
 
 Thats it!
 
 ## API
 
-#### BarCode39@toString
+#### BarCode39#toString
 - Prints out the string that drew the barcode
+
 ```
-	<script>
-		var b = new Barcode39;
-		b.toString() // the content of your element
-	</script>
+<script>
+	var b = new Barcode39;
+	b.toString() // the content of your element
+</script>
 ```
 
-#### BarCode39@toDataURL
+#### BarCode39#toDataURL
 - Prints out the Data URL
+
 ```
-	<script>
-		var b = new Barcode39;
-		b.toDataURL() // data:image/png;base64,*
-	</script>
+<script>
+	var b = new Barcode39;
+	b.toDataURL() // data:image/png;base64,*
+</script>
 ```
 
-#### BarCode39@toBarcode
+#### BarCode39#toBarcode
 - Prints out the Data URL
+
 ```
-	<script>
-		var b = new Barcode39;
-		b.toBarcode() // [BwbwbWBwb]w[BwbwbWBwb]w[etc...]
-	</script>
+<script>
+	var b = new Barcode39;
+	b.toBarcode() // [BwbwbWBwb]w[BwbwbWBwb]w[etc...]
+</script>
 ```
 
 ## Barcode39 Parameters
 
 ```
-	<script>
-		var b = new Barcode39(elementId, type, delimeter);
-	</script>
+<script>
+	var b = new Barcode39(elementId, type, delimeter);
+</script>
 ```
+
 #### @elementId
 - The element to grabs its value from
 
@@ -62,13 +68,13 @@ Barcode39 needs an element to create an image element within.
 By default, the element Barcode39 looks for is an element with an ID of "barcode"
 
 ```
-	<div id="barcode"></div>
+<div id="barcode"></div>
 ```
 
 We also need to provide a value to code, otherwise Barcode39 will throw an error.
 
 ```
-	<div id="barcode">123123123123123123123123</div>
+<div id="barcode">123123123123123123123123</div>
 ```
 
 All non-recognizable characters are turned into "-".
