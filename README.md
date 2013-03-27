@@ -34,7 +34,8 @@ Thats it!
 ```
 
 #### BarCode39#toBarcode
-- Prints out the Data URL
+- Prints out the barcode standard out
+- This derives from what type you set of course
 
 ```html
 <script>
@@ -51,21 +52,19 @@ Thats it!
 </script>
 ```
 
-#### @elementId
+#### BarCode39@elementId
 - The element to grabs its value from
 
-#### @type
+#### BarCode39@type
 - The type of which to display (doesnt matter what type, its all for the toBarcode method)
 - Look at formats here: http://en.wikipedia.org/wiki/Code_39
 
-#### @delimeter
+#### BarCode39@delimeter
 - The standard for wrapping barcode text values is "*" but you can change this
 
 ## Barcode39 HTML
 
-Barcode39 needs an element to create an image element within.
-
-By default, the element Barcode39 looks for is an element with an ID of "barcode"
+By default, Barcode39 looks for its element with a default ID of "barcode" to create an image element within
 
 ```html
 <div id="barcode"></div>
