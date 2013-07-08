@@ -1,10 +1,148 @@
 <!doctype html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Barcode39 | Example</title>
-</head>
-<body>
-	
-</body>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>barcode-39.js by Erik Zettersten</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <script src="https://rawgithub.com/erik5388/barcode-39.js/master/barcode-39.js"></script>
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>barcode-39.js</h1>
+        <p>Code 39 (also known as Alpha39, Code 3 of 9, Code 3/9, Type 39, USS Code 39, or USD-3) is a variable length, discrete barcode generator written in javascript.</p>
+        <p class="view"><a href="http://github.com/erik5388/barcode-39.js">View the Project on GitHub</a></p>
+        <p>Catch me on twitter: <a href="https://twitter.com/zettersten">@zettersten</a></p>
+        <ul>
+          <li><a href="https://github.com/erik5388/barcode-39.js/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/erik5388/barcode-39.js/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="http://github.com/erik5388/barcode-39.js">Fork On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+
+        <h1>Barcode breakdown</h1>
+
+        <h2>How to use</h2>
+        <div class="highlight">
+            <pre><span class="nb">new</span> <span class="nx">Barcode39</span>;</pre>
+        </div>
+        <p>That's it!</p>
+
+        <h2>Barcode39 API</h2>
+
+        <div class="sample">
+            <h3>BarCode39#toString</h3>
+            <ul>
+                <li>Prints out the string that drew the barcode</li>
+            </ul>
+            <div class="highlight">
+                <pre><span class="nb">var</span> <span class="n">b</span> = <span class="nx">Barcode39</span>;<br>b.<span class="nb">toString</span>();<span class="c1"> //Hello World!</span></pre>
+            </div>
+            <div id="example-0">Hello World!</div>
+            <code id="example-output-0">Hello World!</code>
+            <br><br>
+            <script>
+                var b0 = new Barcode39( 'example-0' );
+            </script>
+        </div>
+
+        <div class="sample">
+            <h3>BarCode39#toDataURL</h3>
+            <ul>
+                <li>Prints out the Data URL</li>
+            </ul>
+            <div class="highlight">
+                <pre><span class="nb">var</span> <span class="n">b</span> = <span class="nx">Barcode39</span>;<br>b.<span class="nb">toDataURL</span>();<span class="c1"> //data:image/png;base64,*</span></pre>
+            </div>
+            <div id="example-1">Hello World!</div>
+            <code id="example-output-1">Hello World!</code>
+            <br><br>
+            <script>
+                var b1 = new Barcode39( 'example-1' );
+            </script>
+        </div>
+
+        <div class="sample">
+            <h3>BarCode39#toBarcode</h3>
+            <ul>
+                <li>Prints out the barcode standard out</li>
+                <li>This derives from what type you set of course</li>
+            </ul>
+            <div class="highlight">
+                <pre><span class="nb">var</span> <span class="n">b</span> = <span class="nx">Barcode39</span>;<br>b.<span class="nb">toBarcode</span>();<span class="c1"> //[BwbwbWBwb]w[BwbwbWBwb]w[etc...]</span></pre>
+            </div>
+            <div id="example-2">Hello World!</div>
+            <code id="example-output-2">Hello World!</code>
+            <br><br>
+            <script>
+                var b2 = new Barcode39( 'example-2' );
+            </script>
+        </div>
+
+        <h2>BarCode39 Parameters</h2>
+
+        <div class="sample">
+            <div class="highlight">
+                <pre><span class="nb">var</span> <span class="n">b</span> = <span class="nx">Barcode39</span>(elementId, type, delimeter);</pre>
+            </div>
+        </div>
+
+        <div class="sample">
+            <h3>BarCode39@elementId</h3>
+            <ul>
+                <li>The element to grabs its value from</li>
+            </ul>
+            <h3>BarCode39@type</h3>
+            <ul>
+                <li>The type of which to display (doesnt matter what type, its all for the toBarcode method)</li>
+                <li>Look at formats here: <a href="http://en.wikipedia.org/wiki/Code_39">http://en.wikipedia.org/wiki/Code_39</a></li>
+            </ul>
+            <h3>BarCode39@delimeter</h3>
+            <ul>
+                <li>The standard for wrapping barcode text values is "*" but you can change this</li>
+            </ul>
+        </div>
+
+        <h2>BarCode39 HTML</h2>
+        <div class="sample">
+            <p>By default, Barcode39 looks for its element with a default ID of "barcode" to create an image element within</p>
+            <div class="highlight">
+                <pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"barcode"</span><span class="nt">&gt; ... &lt;/div&gt;</span></pre>
+            </div>
+            <p>We also need to provide a value to code, otherwise Barcode39 will throw an error.</p>
+            <div class="highlight">
+                <pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"barcode"</span><span class="nt">&gt;</span>Hello World!<span class="nt">&lt;/div&gt;</span></pre>
+            </div>
+            <p>All non-recognizable characters are turned into "-".</p>
+            <p>Have fun!</p>
+        </div>
+
+        <hr>
+
+        <h2>Support</h2>
+        <p>I'm only supporting browser with canvas. I havent tried ex-canvas with this yet, but it should work...</p>
+        <p>Patches and pulls are more than welcome!</p>
+
+        <hr>
+
+        <h2>The MIT License (MIT)</h2>
+        <p>Copyright © 2012-<script>document.write((new Date()).getFullYear())</script> Erik Zettersten</p>
+        <p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+        <p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+        <p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="http://zettersten.com">Erik Zettersten</a></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+  </body>
 </html>
