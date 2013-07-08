@@ -1,4 +1,4 @@
-# Barcode39 v0.0.1
+# Barcode39 v0.0.2
 
 By: Erik Zettersten http://zettersten.com
 

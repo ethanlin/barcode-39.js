@@ -1,5 +1,5 @@
 /*!
- * Barcode39 v0.0.1 ~ Copyright (c) 2012 Erik Zettersten, http://zettersten.com
+ * Barcode39 v0.0.2 ~ Copyright (c) 2012 Erik Zettersten, http://zettersten.com
  * Released under MIT license
  */
 
@@ -9,7 +9,7 @@
 
   // General
   var Barcode39;
-  var version = "0.0.1";
+  var version = "0.0.2";
 
   // adds index of compatibility
   [].indexOf||(Array.prototype.indexOf=function(a,b,c){for(c=this.length,b=(c+~~b)%c;b<c&&(!(b in this)||this[b]!==a);b++);return b^c?b:-1;});
@@ -145,7 +145,7 @@
 
 
       // sets default to "-" if no code is found
-      if (typeof code === "") 
+      if (typeof code === "" || typeof code === "undefined") 
         code = char_lookup("-");
 
       for ( j = 0; j < code.length; j++) {
@@ -165,7 +165,7 @@
            
       }
                  
-      if (i!=text.length-1) {
+      if ( i != (text.length - 1) ) {
         ctx.fillStyle = "rgba(255,255,255, 0.0)";
         ctx.fillRect (currentx, currenty, 1, barheight);
         currentx += 1;
@@ -180,6 +180,7 @@
   };
 
   Barcode39.prototype.init = function(){
+    formatter_helper = [];
     var url = this.toDataURL();
     this.element.innerHTML = ("<img src=\"" + url + "\" />");
   }
