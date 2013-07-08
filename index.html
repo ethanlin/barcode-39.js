@@ -27,6 +27,7 @@
       </header>
       <section>
 
+        <small>v0.0.2</small>
         <h1>Barcode breakdown</h1>
 
         <h2>How to use</h2>
@@ -45,11 +46,12 @@
             <div class="highlight">
                 <pre><span class="nb">var</span> <span class="n">b</span> = <span class="nx">Barcode39</span>;<br>b.<span class="nb">toString</span>();<span class="c1"> //Hello World!</span></pre>
             </div>
-            <div id="example-0">Hello World!</div>
-            <code id="example-output-0">Hello World!</code>
+            <div style="text-align: center" id="example-0">Hello World!</div>
+            <pre id="example-output-0">Hello World!</pre>
             <br><br>
             <script>
                 var b0 = new Barcode39( 'example-0' );
+                document.getElementById('example-output-0').innerHTML = b1.toString();
             </script>
         </div>
 
@@ -61,11 +63,12 @@
             <div class="highlight">
                 <pre><span class="nb">var</span> <span class="n">b</span> = <span class="nx">Barcode39</span>;<br>b.<span class="nb">toDataURL</span>();<span class="c1"> //data:image/png;base64,*</span></pre>
             </div>
-            <div id="example-1">Hello World!</div>
-            <code id="example-output-1">Hello World!</code>
+            <div style="text-align: center" id="example-1">Hello World!</div>
+            <pre id="example-output-1">Hello World!</pre>
             <br><br>
             <script>
                 var b1 = new Barcode39( 'example-1' );
+                document.getElementById('example-output-1').innerHTML = b1.toDataURL();
             </script>
         </div>
 
@@ -78,11 +81,12 @@
             <div class="highlight">
                 <pre><span class="nb">var</span> <span class="n">b</span> = <span class="nx">Barcode39</span>;<br>b.<span class="nb">toBarcode</span>();<span class="c1"> //[BwbwbWBwb]w[BwbwbWBwb]w[etc...]</span></pre>
             </div>
-            <div id="example-2">Hello World!</div>
-            <code id="example-output-2">Hello World!</code>
+            <div style="text-align: center" id="example-2">Hello World!</div>
+            <pre id="example-output-2">preHello World!</pre>
             <br><br>
             <script>
                 var b2 = new Barcode39( 'example-2' );
+                document.getElementById('example-output-2').innerHTML = b2.toBarcode();
             </script>
         </div>
 
