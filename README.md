@@ -1,5 +1,7 @@
 # Barcode39 v0.0.1
+
 By: Erik Zettersten http://zettersten.com
+
 Demo: http://erik5388.github.io/barcode-39.js/
 
 # The MIT License (MIT)
