@@ -119,7 +119,7 @@
     var text = (this.element.innerText.toUpperCase()).trim(),
         length = +text.length,
         full_width = (length * 15) + (length - 1),
-        width = ( length < 360 ) ? 400 : (length + 40),
+        width = ( full_width < 360 ) ? 400 : (full_width + 40),
         height = 120,
         ctx = canvas.getContext("2d");
 
